@@ -1,0 +1,883 @@
+<!DOCTYPE HTML>
+<html lang="ar">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="التعامل مع نظام الملفات -Filesystem- في ROS, Mohammed,Shalan,Mohammed Shalan,محمد,شعلان,محمد شعلان, الزقازيق,الكترونيات, شرح ros, ros in arabic,arduino,Robotics, روبوتات,روبوتس,بالعربي,ros بالعربي,اردوينو,مراجعة,كتاب,العاشر من رمضان,جامعة,اندرويد,روبوتكس,ros, شرح ros,">
+    <meta name="description" content="عند سماع كلمة File system فان اول شئ نفكر به هو OS لارتباط نظام الملفات دائما بانظمة التشغيل لكننا نعلم جيدا ان ROS ليس ">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>التعامل مع نظام الملفات -Filesystem- في ROS | Mohammed Shalan</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Mohammed Shalan" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body dir="rtl" style="Cairo">
+<header dir="ltr" class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <!-- <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Mohammed Shalan</span>
+                </a> -->
+                <span class="logo-span">Mohammed Shalan</span>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>الرئيسية</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>هاشتاج</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>التصنيفات</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>الارشيف</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>عني</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>Friends</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="بحث"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Mohammed Shalan</div>
+        <div class="logo-desc">
+            
+            ما يعبر عني ويجول بخاطري
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                الرئيسية
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                هاشتاج
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                التصنيفات
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                الارشيف
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                عني
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                Friends
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        التعامل مع نظام الملفات -Filesystem- في ROS
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+
+    }
+
+    .toc-fixed {
+        position:  fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 1px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: square;
+    }
+
+    #toc-content ol {
+    }
+
+    #toc-content ol li {
+
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ROS/" target="_blank">
+                                <span class="chip bg-color">ROS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Robotics/" class="post-category" target="_blank">
+                                Robotics
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info right-align">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>تاريخ النشر:&nbsp;&nbsp;
+                    ٠١-٠٤-٢٠١٩
+                </div>
+
+                
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>مدة القراءة:&nbsp;&nbsp;
+                        8 دقيقة .
+                    </div>
+                    
+                
+
+
+
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>مرات القراءة:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>عند سماع كلمة File system فان اول شئ نفكر به هو OS لارتباط نظام الملفات دائما بانظمة التشغيل لكننا نعلم جيدا ان ROS ليس بنظام تشغيل كما المعتاد.</p>
+<h3 id="ما-هو-Filesystem"><a href="#ما-هو-Filesystem" class="headerlink" title="ما هو Filesystem"></a>ما هو Filesystem</h3><p>اذن ما نظام التشغيل؟ المقصود بنظام التشغيل بشكل عام هو انه طريقة تساعدنا في التحكم بتخزين واسترجاع الملفات بسهولة.<br>يساعدنا نظام الملفات في تنظيم الملفات بشكل اكثر سهولة حيث يفضل كل الملفات الي اجزاء تكون مشتركة او بينها رابط ما وهو ما يسمي بهيكلة البيانات  اي ان البيانات /الملفات يتم هيكلتها بطريقة معينة بحيث يسهل عملية الوصول والتعرف عليها.</p>
+<h3 id="نظام-الملفات-في-ROS"><a href="#نظام-الملفات-في-ROS" class="headerlink" title="نظام الملفات في ROS"></a>نظام الملفات في ROS</h3><p>لكي نفهم اكثر كيف يعمل ROS لابد ان نفهم نظام ملفاته وكيف يتم تنظيم وادارة الملفات في ROS ، لذلك دعنا ناخذ نظرة عامة كيف نفهم طريقة عمله.<br><img src="/images/posts/ros/filesystem.jpg" alt><br>ينقسم نظام الملفات في ROS بشكل اساسي الي ثلاث مستويات</p>
+<h4 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h4><p>هي نواة التشغيل في ROS ، والباكدج يمكننا ان نطلق عليها انها مجموعة من الملفات مجمعة في ملف واحد لتؤدي وظيفة معينة.<br>هذه الملفات قد تكون اكواد برمجية او عقد Nodes او مكتبات libraries.</p>
+<h4 id="Metapackages"><a href="#Metapackages" class="headerlink" title="Metapackages"></a>Metapackages</h4><p>هي في الاساس package ولكنها تعتمد علي packages اخري لكي تؤدي وظيفتها. علي سبيل المثل يوجد في ROS باكيدج Package تسمي Navigation وهي خاصة ببناء الخرائط للبيئة المحيطة بالروبوت<br>هذه الPackage تعتمد علي packages اخري لتكمل وظيفتها ، فمثلا هي تحتوي علي package خاصة بالحساسات sensors وpackage اخري خاصة برسم محاكاة للبيئة - الخريطة -<br>.</p>
+<h4 id="Package-Mainfest"><a href="#Package-Mainfest" class="headerlink" title="Package Mainfest"></a>Package Mainfest</h4><p>(package.xml) وهو ملف توصيفي للـPackage حيث يحتوي علي وصف كامل للباكيدج من حيث اعتماديتها علي package اخري وايضا رقم الاصدار والمؤلف والرخصة …إلخ</p>
+<h4 id="Messages"><a href="#Messages" class="headerlink" title="Messages"></a>Messages</h4><p>يقوم ROS بالاتصال عن طريق ارسال ROS Messages وهي ملف يحتوي علي البيانات Data المراد ارسالها الي Node معينة في النظام وتكون صيغة الملف .msg ويتواجد في المسار التالي</p>
+<pre><code>our_package/msg/message_files.msg.
+</code></pre><h4 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h4><p>وهي تشبه الي حد كبير Messages وسنشرحها بالتفصيل في الامثلة</p>
+<pre><code>our_package/srv/MyServiceType.srv
+</code></pre><h4 id="نظام-الملفات-في-ROS-1"><a href="#نظام-الملفات-في-ROS-1" class="headerlink" title="نظام الملفات في ROS"></a>نظام الملفات في ROS</h4><p><img src="/images/posts/ros/rosfiles.PNG" alt><br>turtlesim package هي من اشهر الامثلة الموجودة في ROS ، وهذه الصورة توضح اكثر ترتيب الملفات والمجلدات - نظام الملفات - في هذه package حيث نري انها تحتوي علي :</p>
+<ol>
+<li>include folder : وهو مجلد يحتوي علي headers للمكتبات او الاكواد المستخدمة</li>
+<li>msg folder : كما قولنا سابقا ، الرسائل المراد تمريرها بين النظام توجد في هذا والمجلدات</li>
+<li>src : يحتوي علي الاكواد وبكل تاكيد باللغة التي تفضلها</li>
+<li>srv : وهي الservices الموجودة في النظام<br>يوجد ملفات اكثر في package الحقيقة ويمكن تصفحها ومعرفة تفاصيلها عن طريق الامر<pre><code>rospack &lt;package_name&gt;
+</code></pre></li>
+</ol>
+<h3 id="ROS-Workspace"><a href="#ROS-Workspace" class="headerlink" title="ROS Workspace"></a>ROS Workspace</h3><p>workspace هو مجلد يحتوي علي جميع الpackages التي نريدها او نعمل عليها ، كما يوجد به ملف Cmakelist.txt والذي يستخدم في عملية Compiling.<br><img src="/images/posts/ros/rosfiles.PNG" alt><br>يحتوي هذا المجلد علي ثلاث ملفات رئيسية</p>
+<blockquote>
+<p>src=source : وهو المجلد الذي يحتوي علي كل packages التي نعمل عليها واقصد بالكاديج هنا ايضا المشاريع</p>
+</blockquote>
+<blockquote>
+<p>build : يحتوي هذا المجلد علي ملفات cmake , catkin وهي الخاصة بعملية الcompile</p>
+</blockquote>
+<blockquote>
+<p>devel = development: يحتوي علي الملفات في مرحلة testing والتطوير  </p>
+</blockquote>
+<h3 id="مشروع-جديد"><a href="#مشروع-جديد" class="headerlink" title="مشروع جديد"></a>مشروع جديد</h3><p>لكي نفهم اكثر دعنا نطبق المفاهيم السابقة علي مثال بسيط. لدينا نقطتين نريد ان يتم التواصل بينهم عن طريق ROS .<br>واحده منهم ستكون Publisher node اي ستكون هي الجهة المرسلة للبيانات ، قد تكون هذه البيانات هي قراءات الحساسات مثلا او امر معين يتم ارساله للروبوت.<br>في الجهة المقابلة سيكون هناك Subscriber node وهي الجهة المستقبلة</p>
+<blockquote>
+<p>يمكن لاي node في النظام ان تكون publisher او subscriber او الاثنين معا</p>
+</blockquote>
+<p>الان نقوم بعمل package جديده وذلك في مجلد workspace الذي تم تحديده سابقا اثناء عملية تنصيب ROS</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ catkin_create_pkg <span class="token operator">&lt;</span>package_name<span class="token operator">></span> rospy
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>catkin_create_pkg<br>هو الامر المستخدم في ros لانشاء باكيدج جديدة</p>
+</blockquote>
+<blockquote>
+<p>rospy وهي package موجودة بالفعل في نظام ros وهنا نخبر النظام انه لدينا package جديدة تعتمد بشكل اساسي علي rospy وهي اختصار لـ ROS Python حيث تكون python هي اللغة الاساسية للبرمجة في هذه الحالة</p>
+</blockquote>
+<p>انشاء new package باسم helloWorld</p>
+<pre class="line-numbers language-bash"><code class="language-bash">catkin_create_pkg helloWorld rospy $
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="إنشاء-Node"><a href="#إنشاء-Node" class="headerlink" title="إنشاء Node"></a>إنشاء Node</h4><p>كلمة Node في ROS تشير الي Process بمعني اخر عملية حسابية = كود برمجي لوظيفة معينة ، قد تكون Node عبارة عن لوحة اردوينو او كمبيوتر شخصي ويوجد في ROS دائما اكثر من Node تتفاعل مع بعضها بشكل او باخر لتؤدي عدة وظائف في الروبوت المراد تطويره. فعلي سبيل المثال قد يكون لدينا Node مسئولة عن التحكم في radar و node اخري مسئولة عن التحكم في مواتير و اخري مسئولة عن بناء خريطة بناءا علي قراءات تاتي من nodes اخري وهكذا.<br>يتم انشاء ROS Node بواسطة مكتبة موجوده في ros تدعي <a href="http://wiki.ros.org/Client%20Libraries" target="_blank" rel="noopener">Ros client library</a> وهي تحدد اللغة التي يمكن انشاء node بها مثل <a href="http://wiki.ros.org/roscpp" target="_blank" rel="noopener">roscpp</a>, <a href="http://wiki.ros.org/rospy" target="_blank" rel="noopener">rospy</a></p>
+<p>في المثال الذي نعمل عليه لدينا عقدتين - إن شئت ان تمسيها عقدة بالمعني الحرفي للكلمة - two nodes كما في الصورة ، واحدة تدعي talker والاخري listener<br><img src="/images/posts/ros_07.png" alt></p>
+<h4 id="Publisher-Node"><a href="#Publisher-Node" class="headerlink" title="Publisher Node"></a>Publisher Node</h4><p>rospy هي المكتبة المستخدمة لكتابة nodes في هذا المثال ، وهي تعتمد علي python.<br><img src="/images/posts/ros_11.png" alt><br>يتم انشاء node ك publisher عن طريق الامرين :</p>
+<pre class="line-numbers language-python"><code class="language-python">pub <span class="token operator">=</span> rospy<span class="token punctuation">.</span>Publisher<span class="token punctuation">(</span><span class="token string">'chatter'</span><span class="token punctuation">,</span> String <span class="token punctuation">,</span>queue_size<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+rospy<span class="token punctuation">.</span>init_node<span class="token punctuation">(</span><span class="token string">'talker'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<blockquote>
+<p>(rospy.Publisher(&lt;topic_name&gt;, &lt;Date_type_class&gt; , &lt;Queue_size&gt;   </p>
+</blockquote>
+<p>queue size وهو يعتبر كطابور انتظار حيث من الممكن ان ترسل الnode الواحدة اكثر من message في اوقات غير منتظمة لاكثر من node مختلفة لذلك لابد من تحديد حجم الـqueue.</p>
+<blockquote>
+<p>(rospy.init_node(‘name_of_node’<br>(rospy.Rate(10 وهو معدل ارسال - publish - الرسائل messages</p>
+</blockquote>
+<h4 id="Subscriber-Node"><a href="#Subscriber-Node" class="headerlink" title="Subscriber Node"></a>Subscriber Node</h4><p><img src="/images/posts/ros_12.png" alt></p>
+<pre class="line-numbers language-python"><code class="language-python">rospy<span class="token punctuation">.</span>init_node<span class="token punctuation">(</span>'listener<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>لانشاء node تدعي listener</p>
+<pre class="line-numbers language-python"><code class="language-python">rospy<span class="token punctuation">.</span>Subscriber<span class="token punctuation">(</span><span class="token string">'chatter'</span><span class="token punctuation">,</span> String<span class="token punctuation">,</span> callback<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>rospy.Subscriber(&lt;topic_name&gt;, &lt;Date_type_class&gt; , <callback>)</callback></p>
+<p>callback function وهي الدالة التي يتم استدعائها عندما يتم استقبال اي بيانات</p>
+<h4 id="كيف-يتم-الامر"><a href="#كيف-يتم-الامر" class="headerlink" title="كيف يتم الامر"></a>كيف يتم الامر</h4><p>بعد كتابة nodes التي نعمل عليها ، اذن كيف يتم الامر ؟<br>قولنا سابقا انه يتم تمرير الرسائل messages بين النظام عن طريق قناة افتراضية تدعي topic ويتم اختيار اسمها عند انشاء nodes المختلفة كما في publisher وفي المثال هنا تدعي chatter.<br>يتم تشغيل كل node علي حده في terminal منفصلة عن طريق الامر</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ rosrun <span class="token operator">&lt;</span>package_name<span class="token operator">></span> <span class="token operator">&lt;</span>script/node_name<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/images/posts/ros_09.png" alt><br>رائع! كل شئ يعمل كما توقعنا تماما.</p>
+<h4 id="ملاحظات-بسيطة"><a href="#ملاحظات-بسيطة" class="headerlink" title="ملاحظات بسيطة"></a>ملاحظات بسيطة</h4><ol>
+<li>قبل ان تقوم بتنفيذ الامر <strong>rosrun</strong> لابد ان يعمل نظام ROS علي الكمبيوتر! معني ذلك ان هناك ما يشبه السيرفر لابد من تشغيله اولا حيث انه يحتوي علي كل المكتبات والاوامر التي تريدها لتبدا العمل مع ROS.<pre class="line-numbers language-bash"><code class="language-bash">$ roscore
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>بعد انشاء package جديدة عن طريق الامر catkin_create_pkg لابد من اخبار النظام عن التغييرات التي ستحدث اثناء عملية compiling<br>وذلك عن طريق الامر<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">source</span> devel/setup.bash
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ol>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+
+
+
+            <hr>
+            <div class="rns"></div>
+              <script type="text/javascript">
+                (function() {
+                  window.rnsData = {
+                    apiKey: '2hs8cboj42z7p4o9'
+                  };
+                  var s = document.createElement('script');
+                  s.src = 'https://cdn.reactandshare.com/plugin/rns.js';
+                  document.body.appendChild(s);
+                }());
+              </script>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;يمكنك انتهاك كل الحقوق مع ذكر المصدر:
+                    </span>
+                    <a href="http://Mshalan.GitHub.io" class="b-link-green">Mohammed Shalan</a>
+                    <i dir="ltr" class="fa fa-angle-left fa-lg fa-fw text-color" style="direction:ltr"></i>
+
+                    <a dir="ltr" href="/2019/04/01/HowToDealWithROSfilesystem/" class="b-link-green">التعامل مع نظام الملفات -Filesystem- في ROS</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;التدوينة السابقة</div>
+            <div class="card">
+                <a href="/2019/06/21/SOLID-Principles-OOD-in-Arabic/">
+                    <div class="card-image">
+                        
+                        <img src="/images/default-cover.jpg" class="responsive-img" alt="S.O.L.I.D أهم المبادئ البرمجية التي لا يمكن الاستغناء عنها">
+                        
+                        <span class="card-title">S.O.L.I.D أهم المبادئ البرمجية التي لا يمكن الاستغناء عنها</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">عند العمل علي مشروع ما سواء كان كبيرا او صغيرا، لابد وانك واجهت مشاكل عدة تتطلب منك التعديل علي الكود كثيرا. ايضا عند اض</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>٢٠١٩-٠٦-٢١
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Software-Engineering/" class="post-category" target="_blank">
+                                    Software Engineering
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OOD/" target="_blank">
+                        <span class="chip bg-color">OOD</span>
+                    </a>
+                    
+                    <a href="/tags/Software-design/" target="_blank">
+                        <span class="chip bg-color">Software design</span>
+                    </a>
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                التدوينة التالية&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/04/01/AutonomousRoboticsAndDeepLearningBookReview/">
+                    <div class="card-image">
+                        
+                        <img src="/images/posts/au_roboticsCover.jpg" class="responsive-img" alt="ملخص كتاب Autonomous Robotics and Deep Learning">
+                        
+                        <span class="card-title">ملخص كتاب Autonomous Robotics and Deep Learning</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">لماذا هذا الكتابان اهم ما يميزنا نحن البشر هو قدرتنا الفائقة علي ادراك ما حولنا بشكل جيد. ان كل ما تسعي الية شركات التقن</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>٢٠١٩-٠٤-٠١
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            محمد شعلان
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Robotics/" target="_blank">
+                        <span class="chip bg-color">Robotics</span>
+                    </a>
+                    
+                    <a href="/tags/Machine-Learning/" target="_blank">
+                        <span class="chip bg-color">Machine Learning</span>
+                    </a>
+                    
+                    <a href="/tags/Reviews/" target="_blank">
+                        <span class="chip bg-color">Reviews</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;محتوي المقال</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:MohammedShalan9@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;بحث</span>
+            <input type="search" id="searchInput" name="s" placeholder="تبحث عن ... ؟" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

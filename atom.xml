@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mohammed Shalan</title>
+  
+  <subtitle>ONE OF A KIND STUDENT</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://mshalan.github.io/"/>
+  <updated>2019-05-03T21:41:22.832Z</updated>
+  <id>http://mshalan.github.io/</id>
+  
+  <author>
+    <name>محمد شعلان</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>مرحبا بالعالم</title>
+    <link href="http://mshalan.github.io/2020/02/08/hello-world/"/>
+    <id>http://mshalan.github.io/2020/02/08/hello-world/</id>
+    <published>2020-02-08T08:25:53.037Z</published>
+    <updated>2019-05-03T21:41:22.832Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;The man who dares, the man&lt;br&gt;who decides what he wants to achieve&lt;br&gt;and works till his dreams all come&lt;br&gt;true,&lt;br&gt;the man who will
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="starting" scheme="http://Mshalan.GitHub.io/tags/starting/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>S.O.L.I.D أهم المبادئ البرمجية التي لا يمكن الاستغناء عنها</title>
+    <link href="http://mshalan.github.io/2019/06/21/SOLID-Principles-OOD-in-Arabic/"/>
+    <id>http://mshalan.github.io/2019/06/21/SOLID-Principles-OOD-in-Arabic/</id>
+    <published>2019-06-21T17:35:07.000Z</published>
+    <updated>2019-07-07T13:52:11.996Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;عند العمل علي مشروع ما سواء كان كبيرا او صغيرا، لابد وانك واجهت مشاكل عدة تتطلب منك التعديل علي الكود كثيرا. ايضا عند اضافة مميزات جديدة
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Software Engineering" scheme="http://Mshalan.GitHub.io/categories/Software-Engineering/"/>
+    
+    
+      <category term="OOD" scheme="http://Mshalan.GitHub.io/tags/OOD/"/>
+    
+      <category term="Software design" scheme="http://Mshalan.GitHub.io/tags/Software-design/"/>
+    
+      <category term="Java" scheme="http://Mshalan.GitHub.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>التعامل مع نظام الملفات -Filesystem- في ROS</title>
+    <link href="http://mshalan.github.io/2019/04/01/HowToDealWithROSfilesystem/"/>
+    <id>http://mshalan.github.io/2019/04/01/HowToDealWithROSfilesystem/</id>
+    <published>2019-04-01T00:00:57.000Z</published>
+    <updated>2019-05-03T21:48:20.152Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;عند سماع كلمة File system فان اول شئ نفكر به هو OS لارتباط نظام الملفات دائما بانظمة التشغيل لكننا نعلم جيدا ان ROS ليس بنظام تشغيل كما
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Robotics" scheme="http://Mshalan.GitHub.io/categories/Robotics/"/>
+    
+    
+      <category term="ROS" scheme="http://Mshalan.GitHub.io/tags/ROS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ملخص كتاب Autonomous Robotics and Deep Learning</title>
+    <link href="http://mshalan.github.io/2019/04/01/AutonomousRoboticsAndDeepLearningBookReview/"/>
+    <id>http://mshalan.github.io/2019/04/01/AutonomousRoboticsAndDeepLearningBookReview/</id>
+    <published>2019-04-01T00:00:57.000Z</published>
+    <updated>2019-05-03T21:45:37.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;لماذا-هذا-الكتاب&quot;&gt;&lt;a href=&quot;#لماذا-هذا-الكتاب&quot; class=&quot;headerlink&quot; title=&quot;لماذا هذا الكتاب&quot;&gt;&lt;/a&gt;لماذا هذا الكتاب&lt;/h3&gt;&lt;p&gt;ان اهم ما
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Robotics" scheme="http://Mshalan.GitHub.io/tags/Robotics/"/>
+    
+      <category term="Machine Learning" scheme="http://Mshalan.GitHub.io/tags/Machine-Learning/"/>
+    
+      <category term="Reviews" scheme="http://Mshalan.GitHub.io/tags/Reviews/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>اسخدام ROS مع rosserial و اردوينو Arduino</title>
+    <link href="http://mshalan.github.io/2019/04/01/HowToUseArduinoWithROSInArabic/"/>
+    <id>http://mshalan.github.io/2019/04/01/HowToUseArduinoWithROSInArabic/</id>
+    <published>2019-04-01T00:00:57.000Z</published>
+    <updated>2019-05-03T21:42:39.677Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;أحد اهم الاسباب في لانتشار واستخدام ROS هو انه يوفر  hardware abstraction اي انه باختلاف الhw المستخدم في الروبوت ستجد tool معينة او
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Robotics" scheme="http://Mshalan.GitHub.io/categories/Robotics/"/>
+    
+    
+      <category term="ROS" scheme="http://Mshalan.GitHub.io/tags/ROS/"/>
+    
+      <category term="Arduino" scheme="http://Mshalan.GitHub.io/tags/Arduino/"/>
+    
+      <category term="rosserial" scheme="http://Mshalan.GitHub.io/tags/rosserial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ROS Topics,Messages,Services وأشياء اخرى</title>
+    <link href="http://mshalan.github.io/2019/04/01/IntroductionToROSmessagesAndServicesInArabic/"/>
+    <id>http://mshalan.github.io/2019/04/01/IntroductionToROSmessagesAndServicesInArabic/</id>
+    <published>2019-04-01T00:00:57.000Z</published>
+    <updated>2019-05-03T21:43:22.968Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;كما قولنا سابقا ، يتكون نظام ROS من عدد معين من الـnodes المستقلة والمرتبطة ببعضها بطريقة ما. إن الشئ الاجمل في ROS ليس بانه يتكون من
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Robotics" scheme="http://Mshalan.GitHub.io/categories/Robotics/"/>
+    
+    
+      <category term="ROS" scheme="http://Mshalan.GitHub.io/tags/ROS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>مقدمة عن Robot Operating System - ROS -</title>
+    <link href="http://mshalan.github.io/2019/04/01/IntroductionToRobotOperatingSystemInArabic/"/>
+    <id>http://mshalan.github.io/2019/04/01/IntroductionToRobotOperatingSystemInArabic/</id>
+    <published>2019-04-01T00:00:57.000Z</published>
+    <updated>2019-05-03T22:01:15.840Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;لاشك ان مجال الروبوتات يتطور في الاعوام القليلة الماضية بشكل كبير واصبح موضع اهتمام&lt;br&gt;للكثير من الشركات في مجال التقنية.نري ذلك
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Robotics" scheme="http://Mshalan.GitHub.io/categories/Robotics/"/>
+    
+    
+      <category term="ROS" scheme="http://Mshalan.GitHub.io/tags/ROS/"/>
+    
+  </entry>
+  
+</feed>

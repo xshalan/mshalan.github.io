@@ -1,0 +1,854 @@
+<!DOCTYPE HTML>
+<html lang="ar">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="ملخص كتاب Autonomous Robotics and Deep Learning, Mohammed,Shalan,Mohammed Shalan,محمد,شعلان,محمد شعلان, الزقازيق,الكترونيات, شرح ros, ros in arabic,arduino,Robotics, روبوتات,روبوتس,بالعربي,ros بالعربي,اردوينو,مراجعة,كتاب,العاشر من رمضان,جامعة,اندرويد,روبوتكس,ros, شرح ros,">
+    <meta name="description" content="لماذا هذا الكتابان اهم ما يميزنا نحن البشر هو قدرتنا الفائقة علي ادراك ما حولنا بشكل جيد. ان كل ما تسعي الية شركات التقن">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>ملخص كتاب Autonomous Robotics and Deep Learning | Mohammed Shalan</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Mohammed Shalan" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body dir="rtl" style="Cairo">
+<header dir="ltr" class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <!-- <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Mohammed Shalan</span>
+                </a> -->
+                <span class="logo-span">Mohammed Shalan</span>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>الرئيسية</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>هاشتاج</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>التصنيفات</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>الارشيف</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>عني</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>Friends</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="بحث"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Mohammed Shalan</div>
+        <div class="logo-desc">
+            
+            ما يعبر عني ويجول بخاطري
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                الرئيسية
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                هاشتاج
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                التصنيفات
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                الارشيف
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                عني
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                Friends
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/posts/au_roboticsCover.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        ملخص كتاب Autonomous Robotics and Deep Learning
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+
+    }
+
+    .toc-fixed {
+        position:  fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 1px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: square;
+    }
+
+    #toc-content ol {
+    }
+
+    #toc-content ol li {
+
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Robotics/" target="_blank">
+                                <span class="chip bg-color">Robotics</span>
+                            </a>
+                        
+                            <a href="/tags/Machine-Learning/" target="_blank">
+                                <span class="chip bg-color">Machine Learning</span>
+                            </a>
+                        
+                            <a href="/tags/Reviews/" target="_blank">
+                                <span class="chip bg-color">Reviews</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info right-align">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>تاريخ النشر:&nbsp;&nbsp;
+                    ٠١-٠٤-٢٠١٩
+                </div>
+
+                
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>مدة القراءة:&nbsp;&nbsp;
+                        15 دقيقة .
+                    </div>
+                    
+                
+
+
+
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>مرات القراءة:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="لماذا-هذا-الكتاب"><a href="#لماذا-هذا-الكتاب" class="headerlink" title="لماذا هذا الكتاب"></a>لماذا هذا الكتاب</h3><p>ان اهم ما يميزنا نحن البشر هو قدرتنا الفائقة علي ادراك ما حولنا بشكل جيد. ان كل ما تسعي الية شركات التقنية الخاصة بتطوير الروبوتات اليوم هو<br>جعل الروبوت اكثر ادراكا للبيئة المحيطة - Perception - وكيف يتعامل مع المتغيرات الجديدة!<br>هذا الكتاب هو قراءة سريعة ومختصرة لكيف يتم هذا الامر ؟ كيف يمكن للروبوت ادراك البيئة المحيطة والتفاعل معها بشكل او باخر.<br>يتحدث الكتاب بشكل مختصر فيما لايزيد عن 80 صفحة عن كيفية الدمج بين النظريات والعلوم المختلفة كـcomputer vision و deep learning وايضا robot Kinematics<br>لتطوير روبوت بامكانه التفاعل مع البيئة المحيطة به. نجد اليوم مشاريع كثيرة بغض النظر عن مدي التعقيد في المشروع تحاول الدمج بين علم الروبوت وعلم تعلم الآلة ، لذلك هذا الكتاب ملخص جيد سيقودك الي معرفة التقنيات والنظريات المهمة لبناء روبوت اكثر ذكاءا.</p>
+<p><img src="/images/posts/book_review/robot_1.jpg" alt="Autonomous Robot System"></p>
+<h3 id="كيف-يري-العالم-الروبوت"><a href="#كيف-يري-العالم-الروبوت" class="headerlink" title="كيف يري العالم الروبوت"></a>كيف يري العالم الروبوت</h3><p>يجلس طويلا في مختبره - مكتبه - محاولا جاهدا ان يجعل الروبوت الخاص به اكثر ذكاءا واكثر وعيا يشبه الي حد كبير<br>ادراك ووعي الانسان. مع التطور السريع والذاتي للروبوت ، بدا الروبوت يدرك انه اكثر ذكاءا الي حد كبير جدا من صانعه لدرجة<br>انه اتخذ قراره بالاستغناء عنه وتدمير كل ما له علاقة بالحضارة البشرية لتبدا ثورة رقمية يكون بطلها هو ذاك الروبوت. لاشك<br>انك رايت الكثير من الافلام والمسلسلات التي تدور حول هذه الفكرة بشكل او باخر مثل westworld و Ex machina.<br>تبدا مقدمة الكتابة بالعلاقة الهوليوودية ما بين عالمنا والروبوتات وما هو الروبوت وكيف نطلق علي الة معينة انها روبوت! لاشك ان كثير منا راي الذراع الصناعي وكيف يقوم بنقل الاشياء او تركيبها ونطلق عليه روبوت ، علي العكس اننا لا نطلق علي الحزام الالي الذي ينقل المنتجات او يجعلها تمر علي مراحل متعددة في الماكينة - كما في حزام الحقائب في المطار - روبوت مع انه يعتبر روبوتا بشكل او باخر.<br>تنتهي مقدمة الكتاب بلمحة مختصرة عن الذكاء الاصطناعي وانواعه وتاثيره وتطور علي “تعلم الالة” ليصل الي ما نحن عليه اليوم.<br><img src="/images/posts/book_review/robot_vs_belt.jpg" alt="Robotic Arms vs conveyor belt"></p>
+<h3 id="نظرة-علي-الاحصاء-والاحتمالات"><a href="#نظرة-علي-الاحصاء-والاحتمالات" class="headerlink" title="نظرة علي الاحصاء والاحتمالات"></a>نظرة علي الاحصاء والاحتمالات</h3><p>يبدا الكتاب بشرح المبادئ الاساسية للاحتمالات والاحصاء ويتطرق الي نظرية في غاية الاهمية وتدخل في جميع التطبيقات تقريبا للذكاء الاصطناعي وهي نظرية بايز.<br>يعطينا الكتاب ايضا لمحات عن انواع التوزيع الاحتمالي ونظرياته وقوانينه وكيفية استخدام تلك القوانين للحصول علي نتائج محددة<br><img src="/images/posts/book_review/distr.jpg" alt="التوزيع الطبيعي"></p>
+<h4 id="الاحتمالات"><a href="#الاحتمالات" class="headerlink" title="الاحتمالات"></a>الاحتمالات</h4><p>نعيش اليوم في عالم يملؤه التعقيد والاحتمالات ، فالاحتمال هو احتمالية حدوث حدث معين ومعرفة مدي فرص وقوعه هو الجزء الرياضي الذي تناقشه قوانين الاحتمالات.<br>$$ 1 \leq P(E) \leq 0 $$<br>احتمال وقوع اي حدث تتراوح دائما ما بين 0 و 1 فاحتمالية وقع الحدث E = 0 يعني استحالة وقوعه ، وعلي النقيض احتمالية حدوث الحدث E = 1 تعني حتمية وقوعه.</p>
+<p>لكي اوضح هنا بعض القوانين الاساسية والمهمة دعنا نبدا بالمثال الاكثر شهرة عند شرح الاحتمالات ، رمي قطعة نقود معدنية في الهواء - ملك وكتابة - فاحتمال وقوع العملة المعدنية علي اي وجه متساوي تماما لاحتمال وقوعها علي الوجه الاخر. لنفترض ان K تشير الي ملك و W تشير الي كتابة ، واردنا التعبير الرياضي لاحتمال وقوع العملة المعدنية علي الوجه W :<br>$$ P\left(A\right) = \frac{W}{K,W} = \frac{1}{2} $$<br>A هي احتمال وقوع العملة المعدنية علي احد الوجهين ، ونفهم من هذه المعادلة ان احتمالية وقوع K , W متساوية. هذا يقودنا الي مفهوم اخر وهو ان احتمال وقوع جميع الاحداث = 1<br>$$ \sum_i P\left(X_{i}\right) = 1 $$<br>من خلال هذا القانون يمكننا استنتاج ان احتمال وقع الحدث المكمل او المتمم للحدث A يكون :<br>$$ P\left(A^{‘}\right) = 1 - P\left(A\right) $$</p>
+<h4 id="الاحتمال-الشرطي-ونظرية-بايز"><a href="#الاحتمال-الشرطي-ونظرية-بايز" class="headerlink" title="الاحتمال الشرطي ونظرية بايز"></a>الاحتمال الشرطي ونظرية بايز</h4><p>Conditional Probability او الاحتمال الشرطي ، وهو يعرف باحتمال وقوع حدث مرتبط بوقوع حدث أخر اي انه يعبر عن حدثان وقوع احدهما مرتبط بوقع الاخر. مثال علي ذلك هو احتمال نجاح طالب في جميع المواد مع العلم انه قد نجح بالفعل في مادة الرياضيات علي سبيل المثال ، ويتم التعبير عن ذلك الامر رياضيا بالشكل التالي :<br>$$ P\left(A|B\right) $$</p>
+<blockquote>
+<p>وتقرأ كالتالي احتمال وقع الحدث A مع العلم ان الحدث B قد وقع</p>
+</blockquote>
+<p>هذا النوع من الاحتمالات يسمي الاحتمالات الغير مستقلة اي ان وقوع احد الحديثين مرتبط بوقوع الاخر.</p>
+<h4 id="نظرية-بايز"><a href="#نظرية-بايز" class="headerlink" title="نظرية بايز"></a>نظرية بايز</h4><p>نظرية بايز هي من هم التطبيقات علي نظريات الاحتمال علي الاطلاق ، وهي من النظريات التي غيرت شكل العالم في فترة من الفترات كذلك تعتبر من اهم تطبيقات الذكاء الاصطناعي حيث انها تدخل في تطبيقات مثل كشف الرسائل المزعجة spam وايضا كشف الغش فيالالعاب الالكترونية وتستخدم ايضا في الروابط المقترحة التي تظهر لك دائما عند مشاهدة فيديو او قراءة رابط معين ، كذلك تدخل هذه النظرية في تطبيقات مثل مجال الادارة او الكيمياء العضوية.</p>
+<p><img src="/images/posts/book_review/Rolling-Dice.jpg" alt><br>قد نتحدث في مقال مفصل عن هذه النظرية لكن ما اريدك ان تعرفه هو ماذا تقول هذه النظرية<br>لو اعتبرنا اننا نمتلك مكعب “نرد” يحتوي فقط علي الاعداد الزوجية ، فما هو احتمال ان نرمي النرد ونحصل علي الرقم 6 ؟<br>A -&gt; هو الحدث الذي يعبر عن احتمالية ان نحصل علي الرقم 6<br>B -&gt; هي الحدث الذي يعبر عن ان قطعة النرد الخاص بنا تحتوي فقط علي ارقام زوجية</p>
+<p>$$ P\left(A|B\right) = \frac{1}{3} $$</p>
+<p>تنص نظرية بايز بما يلي:<br>$$ P\left(A|B\right) = \frac{P\left(A\right) × P\left(B|A\right)}{P\left(B\right)} $$<br>دعنا نطبق المثال السابق لنري كيف نحصل علي نتيجة:<br>P(B|A) -&gt; وهي تعني عند رمي النرد والحصول علي رقم ما ما هي احتمالية ان يكون هذا الرقم زوجي؟ بكل تاكيد الاجابة ستكون 1 اي ان الرقم بكل تاكيد سيكون زوجي لاننا افترضنا ذلك من البداية<br>P(A) -&gt; وتعني احتمال ان احصل علي رقم ما خلال رمي النرد لمرة واحدة وايضا بكل تاكيد هي 1/6<br>P(B) -&gt; وهي احتمالية ان يكون الرقم زوجي او فردي عند رمي النرد ايضا لمرة واحدة وايضا تكون النتيجة 1/2<br>لذلك عن تطبيق نظرية بايز نحصل علي الناتج التالي:<br>$$ P\left(A=6|B=even\right) = \frac{P\left(A\right) × P\left(B|A\right)}{P\left(B\right)} = \frac{1 * (1/6)}{(1/2)} = \frac{1}{3} $$</p>
+<h3 id="كل-شئ-عبارة-عن-مصفوفة"><a href="#كل-شئ-عبارة-عن-مصفوفة" class="headerlink" title="كل شئ عبارة عن مصفوفة"></a>كل شئ عبارة عن مصفوفة</h3><p>في هذا الفصل تحدث الكتاب عن المصفوفات واهم خواصها والعمليات عليها وتحدث بشكل مختصر جدا عن القيم والمتجهات الذاتية Eigenvalues and eigenvectors وسنحاول القاء الضوء عليها سريعا.<br><img src="/images/posts/book_review/matrix.png" alt="What is the matrix?"><br>المصفوفات ليس فقط مجرد معادلات رياضية ولكنها تدخل في كثير من التطبيقات المختلفة مثل Computer vision فتعتبر المصفوفات هي المفتاح الرئيسي في هذا المجال وايضا في Images compression , Dimensionality reduction وتدخل ايضا المصفوفات في تطبيقات الMachine Learning و Quantum physics و System control.<br>كل شئ حولنا يمكن بشكل او باخر تمثيلة بمصفوفة تعبر عنه ، المصفوفة بالتعبير الرياضي هي مجموعة من الارقام مرتبة في شكل صف وعمود ويتم تمثيلها بالشكل التالي :</p>
+<p>$$A=\begin{bmatrix}a_{11} &amp; a_{12} &amp; … &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; … &amp; a_{2n} \\ : &amp; : &amp;  &amp; : \\ a_{m1} &amp; a_{m2} &amp; … &amp; a_{mn}\end{bmatrix}$$</p>
+<p>يعبر عن هذه المصفوفة بانها M×N حيث M هي عدد الصفوف و N تمثل عدد الاعمدة ، وكل رقم خلال هذه المصفوفة يسمي عنصر.<br>المصفوفات هي من اهم مفاتيح الجبر الخطي وطالما نتحدث عن المصفوفات والجبر الخطي فاننا نتحدث عن Linear Transformation او ما يسمي بالتحويل الخطي.</p>
+<h4 id="كيف-يري-الكمبيوتر-الاشياء"><a href="#كيف-يري-الكمبيوتر-الاشياء" class="headerlink" title="كيف يري الكمبيوتر الاشياء"></a>كيف يري الكمبيوتر الاشياء</h4><p><img src="/images/posts/book_review/sample-matrix.gif" alt="How computer see?"><br>كل ما نراه امامنا علي شاشة الكمبيوتر هو عبارة عن مصفوفة فاذا اردنا مثلا ان “نكبر” scale صورة ما ، فان هذا الامر يتم عن طريق ضرب المصفوفة التي تعبر عن الصورة في رقم معين يمثل مقدار التكبير Scaling factor ، فماذا لو اردنا ان ندور” rotate الصورة “ ؟! أجل ، بالتاكيد عن طريق ضرب المصفوفة في مصفوفة اخر تمثل القيم التي يمكن من خلالها عمل rotation او تدوير للصورة.<br><img src="/images/posts/book_review/transformation.jpg" alt><br>اشرنا سابقا الي مفهوم Linear Transformation ولكن ماذا يعني ؟ دعنا نبدا بكلمة Transformation وهي تعني دالة ما يكون لديها دخل input وتعطينا output خرج معين بعد عملية معينة تقوم بها هذه الدالة ، كما وضحت في الصورة المصفوفة تقوم بعمل stretching للمصفوفة الاصلية وتغيير اتجاهاها ، ولكي نقول علي هذا التحول خطي او linear لابد ان يتوفر نقطتين الاولي وهي ان كل الخطوط ما زالت خطية اي لا تحتوي علي اي انحناءات او كيرفات والنقطة الثانية ان بعد التحويل نقطة الاصل origin هي نفسها ولم تتغير</p>
+<h4 id="Eigenvectors-and-Eigenvalues-القيم-والمتجهات-الذاتية"><a href="#Eigenvectors-and-Eigenvalues-القيم-والمتجهات-الذاتية" class="headerlink" title="Eigenvectors and Eigenvalues القيم والمتجهات الذاتية"></a>Eigenvectors and Eigenvalues القيم والمتجهات الذاتية</h4><p><img src="/images/posts/book_review/Mona_Lisa_eigenvector_grid.png" alt><br>رائع ! اذن ما علاقة كل هذا بالـ eigenvectors او بالعربية المتجهات الذاتية ؟ لا اخفي عليك ان هذا الموضوع خصيصا كان شئ صعب فهمه او تخيله طوال سنوات الجامعة! ولكن دعني اوضح لك بعض الاشياء لربما تسهل عليك فهم هذا الموضوع.<br>إن القيم والمتجهات الذاتية هي خصائص مميزة للمصفوفة وتختلف دراستها او فهمها بحسب التطبيق الذي تعمل عليه بكل تاكيد لكن يظهل المفهوم ثابت ، كما شرحنا سابقا التحويل من احداثيات الي اخري في Linear transformation ، فلو نظرنا الي الصورة السابقة نجد اننا قمنا بالفعل بعمل تحويل او بمعني ادق Shearing اي قص لبعض الاجزاء مع تغيير احداثيات الصورة ، سنجد ان المتجهة باللون الاحمر قد تغير اتجاه لكن المتجه باللون الازرق ظل كما هو في نفس الاتجاه ! الان ماذا يعني ذلك ؟!<br>تخمينك صحيح ! المتجه باللون الازرق هو متجه ذاتي لهذه المصفوفة مع قيمة ذاتية مساوية لرقم 1 ويعني ذلك ان المتجهات الذاتية لا تغير اتجاهها اثناء عملية التحويل eigenvector ولكن قد تتغير قيماتها بحدوث امتداد stretching او compressing وهي القيم الذاتية Eigenvalue هذه الخواص هي العملية الاساسية في تطبيقات كثيرة مثل Face recognition او Dimensionality reduction<br><img src="/images/posts/book_review/Eigenvectors.gif" alt><br>لنوضح اكثر دعنا نقول اننا قمنا بعملية Transformation للمصفوفة كما في الصورة ،سنجد ان المتجهات باللون الاحمر قد تغير اتجاهها بالفعل بعد عملية التحويل ، اما المتجهات باللون الازرق فظل الاتجاه ثابت يعني ذلك انه eigenvector لهذه المصفوفة ولكن طوله تغير بمقدار الضعف لذلك تكون Eigenvalue لهذا المتجه = 2.<br>لو نظرنا ايضا الي المتجهات باللون البنفسجي سنجد ان اتجاهها لم يتغير ايضا ولكن القيم الذاتية لها Eigenvalue = 1.</p>
+<h4 id="التعبير-الرياضي"><a href="#التعبير-الرياضي" class="headerlink" title="التعبير الرياضي"></a>التعبير الرياضي</h4><p>يتم التعبير الرياضي عن هذه القيم والمتجهات بهذه المعادلة وتسمي characteristics equation :<br>$$ A\nu = \lambda\nu \\<br>|A-\lambda I|=0 \\<br>where\\ \lambda \Rightarrow Eigenvalue\\<br> \nu \Rightarrow Eigenvector $$</p>
+<h3 id="كيف-يتحرك-الروبوت"><a href="#كيف-يتحرك-الروبوت" class="headerlink" title="كيف يتحرك الروبوت"></a>كيف يتحرك الروبوت</h3><p> للاجابة علي هذا السؤال لابد من دراسة معادلات الحركة الخاصة بالروبوت Robot Kinematics وفي الفصل الرابع من الكتاب يتحدث عن هذه النقطة ويعطينا وصفا للروبوت المستخدم في المشروع النهائي والتطبيقي علي هذا الكتاب.<br> <img src="/images/posts/book_review/kinematic_structure.png" alt="Robot Kinematics structure"></p>
+<h4 id="ما-هي-معادلات-الحركة"><a href="#ما-هي-معادلات-الحركة" class="headerlink" title="ما هي معادلات الحركة"></a>ما هي معادلات الحركة</h4><p> اذن ما هي معادلات الحركة؟ علم Kinematics هو العلم الخاص بدراسة حركة الروبوت للاجابة علي سؤال محدد وصريح ما هي الامكان والحركات التي يستطيع الروبوت تحقيقها او الوصول اليها مع الاخذ في الاعتبار اطوال كل قطعة في الروبوت واتجاه حركاتها او دورانها ايضا مع اهمال القوة المسببة للحركة سواء كانت هذه الحركة ناتجة عن مواتير او شخص ما يحرك الروبوت. الشئ الوحيد الذي يهمنا هو هل الحركة التي نريدها تمت ام لا؟!</p>
+<h3 id="iCub-robot"><a href="#iCub-robot" class="headerlink" title="iCub robot"></a>iCub robot</h3><p> <img src="/images/posts/book_review/icub.jpg" alt="iCub robot"><br> icub robot هو الروبوت المستخدم لتطبيق المشروع النهائي في هذا الكتاب وهو مشروع مفتوح المصدر لروبوت يحاكي شكل الانسان .<br> المشروع النهائي لهذا الكتاب هو محاولة جعل الروبوت يصل الي حل لمتاهة ثلاثية الابعاد 3D Maze تحتوي علي كرة في نقطة ما وعليه ايجاد الطريق المناسب لايصال هذه الكرة الي نهاية المتاهة.</p>
+<h3 id="تطبيقات-الرؤية-الحاسوبية-Computer-vision"><a href="#تطبيقات-الرؤية-الحاسوبية-Computer-vision" class="headerlink" title="تطبيقات الرؤية الحاسوبية(Computer vision)"></a>تطبيقات الرؤية الحاسوبية(Computer vision)</h3><p> <img src="/images/posts/book_review/Optimus_Prime.png" alt="Optimus Prime wisdom"></p>
+<blockquote>
+<p> هناك ما هو أكثر مما تراه العين.</p>
+</blockquote>
+<p> في البداية تحدثنا ان الهدف الذي نسعي اليه هو جعل الروبوت اكثر ادراكا لما حوله ، فاذا استطعنا جعل الروبوت “يري” ما حوله ويتسطيع تفسيره فنحن علي الطريق الصحيح!.<br> رؤية الحاسوب Computer Vision من اهم المجالات في علم الحاسب ومؤخرا في الذكاء الاصطناعي والهدف منها بناء آلة قادرة علي فهم الصور وتحليلها. من اشهر الامثلة علي تطبيقات computer vision هي خاصية التعرف علي الوجه وهي موجوده الان في معظم الهواتف المحمولة.</p>
+<p> في الفصل الخامس من الكتاب يناقش الكاتب واحدة من اهم التطبيقات والخورزميات المستخدمة في مجالات عديدة من تطبيقات الرؤية الحاسوبية وهي Inverse homography</p>
+<h4 id="Inverse-homography"><a href="#Inverse-homography" class="headerlink" title="Inverse homography"></a>Inverse homography</h4><p> بداية لا اعلم اي ترجمة عربية لمصطلح homography ولكن للتوضيح اكثر دعنا نقول انها transformation ، وبالتالي نحن نتعامل هنا مع مصفوفة اي ان homography هو عبارة عن مصفوفة معينة تقوم بتحويل احداثيات الصورة من شكل لاخر.<br> <img src="/images/posts/book_review/homo.jpg" alt="homography"></p>
+<p> للتوضيح اكثر دعنا ناخذ الامور ببساطة ، لو اننا نريد ان نعمل علي تطبيق يلعب الشطرنج عن طريق اخذ الحركات والقطع من العالم الحقيقي وتحليلها واقتراح الحركة المناسبة.</p>
+<h4 id="المشكلة-؟"><a href="#المشكلة-؟" class="headerlink" title="المشكلة ؟"></a>المشكلة ؟</h4><p> <img src="/images/posts/book_review/inverse_simple.jpeg" alt="homography simply"><br> التعامل بالنسبة للكمبيوتر مع الشكل الثاني في الصورة (الاسقاط العمودي)الذي يمثل مربع متماثل الي حد ما اسهل بكثير من الصورة الواقعية الاولي والتي نتعامل معها - نحن البشر - بشكل طبيعي وبسهولة ايضا. لذا فان inverse homography وجدت لتحل هذه المشكلة وهي التحويل من الصورة الاولي الي الثانية كما في الصورة.</p>
+<p> نرجع ثانية الي التطبيق المستخدم في الكتاب لنري ماذا حدث؟<br> <img src="/images/posts/book_review/homograph.png" alt><br> الشكل (1) يوضح كيف يري الروبوت المتاهة والشكل (2) يبين لنا بعد تطبيق الالجوريزم المطلوب الشكل العمودي الذي نريد التعامل معه حتي نستطيع رسم خريطة مناسبة ودقيقة للمتاهة كما نري في الصورة التالية:<br> <img src="/images/posts/book_review/result.png" alt></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"> <span class="token keyword">const</span> std_msgs<span class="token operator">::</span>Empty<span class="token operator">&amp;</span> toggle_msg
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="المصادر"><a href="#المصادر" class="headerlink" title="المصادر"></a>المصادر</h3><ol>
+<li><a href="https://en.wikipedia.org/wiki/Probability" target="_blank" rel="noopener">Probability</a></li>
+<li><a href="https://eltawil.org/sciencewonders/?p=4860" target="_blank" rel="noopener">قانون بايز والاحتمالات المشروطة</a></li>
+<li><a href="http://blog.kleinproject.org/?p=588" target="_blank" rel="noopener">Matrices and Digital Images</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors" target="_blank" rel="noopener">Eigenvalues and eigenvectors</a></li>
+<li><a href="https://walterfarah.wordpress.com/2013/07/09/humanoid-robot-lola/" target="_blank" rel="noopener">HUMANOID ROBOT. LOLA</a></li>
+<li><a href="http://www.icub.org/" target="_blank" rel="noopener">iCub robot</a></li>
+</ol>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+
+
+
+            <hr>
+            <div class="rns"></div>
+              <script type="text/javascript">
+                (function() {
+                  window.rnsData = {
+                    apiKey: '2hs8cboj42z7p4o9'
+                  };
+                  var s = document.createElement('script');
+                  s.src = 'https://cdn.reactandshare.com/plugin/rns.js';
+                  document.body.appendChild(s);
+                }());
+              </script>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;يمكنك انتهاك كل الحقوق مع ذكر المصدر:
+                    </span>
+                    <a href="http://Mshalan.GitHub.io" class="b-link-green">Mohammed Shalan</a>
+                    <i dir="ltr" class="fa fa-angle-left fa-lg fa-fw text-color" style="direction:ltr"></i>
+
+                    <a dir="ltr" href="/2019/04/01/AutonomousRoboticsAndDeepLearningBookReview/" class="b-link-green">ملخص كتاب Autonomous Robotics and Deep Learning</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;التدوينة السابقة</div>
+            <div class="card">
+                <a href="/2019/04/01/HowToDealWithROSfilesystem/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="التعامل مع نظام الملفات -Filesystem- في ROS">
+                        
+                        <span class="card-title">التعامل مع نظام الملفات -Filesystem- في ROS</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">عند سماع كلمة File system فان اول شئ نفكر به هو OS لارتباط نظام الملفات دائما بانظمة التشغيل لكننا نعلم جيدا ان ROS ليس </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>٢٠١٩-٠٤-٠١
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Robotics/" class="post-category" target="_blank">
+                                    Robotics
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ROS/" target="_blank">
+                        <span class="chip bg-color">ROS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                التدوينة التالية&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/04/01/HowToUseArduinoWithROSInArabic/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="اسخدام ROS مع rosserial و اردوينو Arduino">
+                        
+                        <span class="card-title">اسخدام ROS مع rosserial و اردوينو Arduino</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">أحد اهم الاسباب في لانتشار واستخدام ROS هو انه يوفر  hardware abstraction اي انه باختلاف الhw المستخدم في الروبوت ستجد t</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>٢٠١٩-٠٤-٠١
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Robotics/" class="post-category" target="_blank">
+                                    Robotics
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ROS/" target="_blank">
+                        <span class="chip bg-color">ROS</span>
+                    </a>
+                    
+                    <a href="/tags/Arduino/" target="_blank">
+                        <span class="chip bg-color">Arduino</span>
+                    </a>
+                    
+                    <a href="/tags/rosserial/" target="_blank">
+                        <span class="chip bg-color">rosserial</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;محتوي المقال</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:MohammedShalan9@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;بحث</span>
+            <input type="search" id="searchInput" name="s" placeholder="تبحث عن ... ؟" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

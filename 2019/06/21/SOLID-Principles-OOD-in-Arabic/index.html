@@ -1,0 +1,1022 @@
+<!DOCTYPE HTML>
+<html lang="ar">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="S.O.L.I.D أهم المبادئ البرمجية التي لا يمكن الاستغناء عنها, Mohammed,Shalan,Mohammed Shalan,محمد,شعلان,محمد شعلان, الزقازيق,الكترونيات, شرح ros, ros in arabic,arduino,Robotics, روبوتات,روبوتس,بالعربي,ros بالعربي,اردوينو,مراجعة,كتاب,العاشر من رمضان,جامعة,اندرويد,روبوتكس,ros, شرح ros,">
+    <meta name="description" content="عند العمل علي مشروع ما سواء كان كبيرا او صغيرا، لابد وانك واجهت مشاكل عدة تتطلب منك التعديل علي الكود كثيرا. ايضا عند اض">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>S.O.L.I.D أهم المبادئ البرمجية التي لا يمكن الاستغناء عنها | Mohammed Shalan</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+        code[class*="language-"], pre[class*="language-"] {
+            white-space: pre !important;
+        }
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Mohammed Shalan" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body dir="rtl" style="Cairo">
+<header dir="ltr" class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <!-- <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Mohammed Shalan</span>
+                </a> -->
+                <span class="logo-span">Mohammed Shalan</span>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>الرئيسية</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>هاشتاج</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>التصنيفات</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>الارشيف</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>عني</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>Friends</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="بحث"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Mohammed Shalan</div>
+        <div class="logo-desc">
+            
+            ما يعبر عني ويجول بخاطري
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                الرئيسية
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                هاشتاج
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                التصنيفات
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                الارشيف
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                عني
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                Friends
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/default-cover.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        S.O.L.I.D أهم المبادئ البرمجية التي لا يمكن الاستغناء عنها
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+
+    }
+
+    .toc-fixed {
+        position:  fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 1px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: square;
+    }
+
+    #toc-content ol {
+    }
+
+    #toc-content ol li {
+
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/OOD/" target="_blank">
+                                <span class="chip bg-color">OOD</span>
+                            </a>
+                        
+                            <a href="/tags/Software-design/" target="_blank">
+                                <span class="chip bg-color">Software design</span>
+                            </a>
+                        
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Software-Engineering/" class="post-category" target="_blank">
+                                Software Engineering
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info right-align">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>تاريخ النشر:&nbsp;&nbsp;
+                    ٢١-٠٦-٢٠١٩
+                </div>
+
+                
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>مدة القراءة:&nbsp;&nbsp;
+                        11 دقيقة .
+                    </div>
+                    
+                
+
+
+
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>مرات القراءة:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>عند العمل علي مشروع ما سواء كان كبيرا او صغيرا، لابد وانك واجهت مشاكل عدة تتطلب منك التعديل علي الكود كثيرا. ايضا عند اضافة مميزات جديدة للمشروع فانك تحتاج الي التعديلات مرارا وتكرارا. هذه العمليات المتكررة من التعديلات هي ما اوجدت هذه المبادئ بصورتها الحالية ، أي انه عند اتباعنا لهذه المبادئ في تصميم المشروع ، سيكون الكود اكثر قابلية للتعديل والتغيير مع المتطلبات الجديدة التي تطرأ عليه باستمرار وايضا سيكون اكثر قابلية لعمليات الاختبار والصيانة.</p>
+<p><img src="/images/posts/solid/refactor.jpg" alt="&quot;Refactor Code&quot;"></p>
+<h3 id="ما-هي-مبادئ-SOLID"><a href="#ما-هي-مبادئ-SOLID" class="headerlink" title="ما هي مبادئ SOLID"></a>ما هي مبادئ SOLID</h3><p>إن كنت من هواة الكتب فلابد وانك سمعت باسم Robert C. Martin وهو معروف بـ “العم بوب”. نشر العم بوب هذه المبادئ في بداية القرن الحالي كمبادئ متبعة عند تصميم التطبيقات وكتابة الكود. وهي عبارة عن خمسة مبادئ متمثلة في الكلمة SOLID حيث كل حرف يعبر عن مبدأ معين ، كل مبدا من هذه المبادئ سيساعدنا اكثر في كتابة كود قابل للتوسع وللتغيير بشكل مستمر مع كل اضافة او ميزة نحتاجها في المشروع. هذه المبادئ لا تتوقف علي لغة برمجة معينة حيث انها تعتبر Design patter اي نمط وطريقة تفكير يمكنك اتباعها للحصول علي الاحل الامثل عند كتابة الاكواد.<br>الجدول التالي يوضح ما هي هذه المبادي بشكل مختصر ، وسنقوم بتوضيحها بشكل تفصيلي في مقالة  علي جزئين.</p>
+<p> <strong>انت تقرا الجزء الاول منها الان.</strong></p>
+<table>
+<thead>
+<tr>
+<th>الحرف</th>
+<th>المفهوم</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S</td>
+<td>Single responsibility principle</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Open-closed principle</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Liskov substitution principle</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Interface segregation principle</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Dependency inversion principle</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Single-responsibility-principle-المسئولية-الواحدة"><a href="#Single-responsibility-principle-المسئولية-الواحدة" class="headerlink" title="Single responsibility principle - المسئولية الواحدة"></a>Single responsibility principle - المسئولية الواحدة</h3><p><img src="/images/posts/solid/tumblr.gif" alt><br>ينص هذا المبدأ علي انه اي تعديل علي الكلاس لابد وان يكون لسبب واحد فقط ، اي بمعني اخر انه لا يمكن للكلاس ان تقوم باكثر من وظيفة ، اي ان لهذه الكلاس وظيفة واحدة ومحددة ، عند التعديل عليها لا يتاثر اي كلاس اخر بهذا التعديل.</p>
+<blockquote>
+<p>The Single Responsibility Principle (SRP) states that each software module should have one and only one reason to change.</p>
+</blockquote>
+<p>حسناً، ماذا تعني بوظيفة واحدة ؟ بالطبع لا اقصد ان تحتوي الكلاس علي دالة واحدة فقط ، فيمكن ان تتواجد اكثر من دالة -methods- بالطبع ولكن كل هذه الدوال تخدم وظيفة معينة. دعنا نستوضح الامور بمثال اكثر واقعية.<br>لنفترض ان لدينا كلاس يقوم بقراءة جدول الموظفين من قاعدة بيانات شركة ما ، ثم يقوم بحساب المرتب المستحق للموظف بناءا علي معاير معينة وحفظه في قاعدة البيانات ، ثم يقوم بطباعة تقرير بطريقة معينة للمرتب المستحق للموظف.</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Employee</span>
+<span class="token punctuation">{</span>
+
+<span class="token keyword">public</span> Money <span class="token function">calculatePay</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> String <span class="token function">printReport</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>سنجد هنا ان هذه الكلاس تقوم بشكل واضح بثلاث وظائف مختلفة:</p>
+<ol>
+<li>حساب المرتب المستحق للموظف عن طريق الجوريزم معين ومعايير معينة</li>
+<li>حفظ بيانات الموظف في قاعدة البيانات</li>
+<li>طباعة تقرير ببيانات معينة عن هذا الموظف</li>
+</ol>
+<p>اعتقد الان ان one reason to change - سبب واحد للتغيير - واضحة بشكل كبير ، ولنزيد الامور وضوحا دعنا نفترض ان المدير المالي للشركة قرر تغيير الاستراتيجية التي يتم بها حساب المرتب المستحق للموظف ، اظن سيكون علينا تغيير الكلاس بسبب هذا القرار. السيناريو الثاني وهو ان المدير العام يريد تغيير التقرير الذي يتم طباعته ! مرة اخري سنغير الكلاس.<br>لنفترض هذه المرة ان هناك تعديلات علي قاعدة البيانات ، تعلم الان ما ستفعله ، ستغير الكلاس مرة اخري مع العلم انه لا يوجد علاقة بين تغيير قاعدة البيانات-Schema- وبين الموظف. او بين التقرير الذي يتم طباعته للمدير العام والموظف !</p>
+<p>يعتبر مبدأ المسئولية الواحدة من اسهل المبادئ وفي نفس الوقت من اصعبها وسنري في باقي المقالة كيف تعمل هذه المبادئ معا لانتاج كود قابل للقراءة والتعديل والصيانة.</p>
+<h3 id="Open-Closed-principle"><a href="#Open-Closed-principle" class="headerlink" title="Open-Closed principle"></a>Open-Closed principle</h3><p>ينص هذا المبدأ علي ان الكلاس يجب ان تكون قابلة للمزيد من الاضافات لكن بدون التعديل علي الكود الاصلي لهذه الكلاس.</p>
+<blockquote>
+<p>Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification</p>
+</blockquote>
+<p>الامر ليس مقتصرا فقط علي الكلاس ! ولكن يؤخذ دائما في الاعتبار عند تصميم اي كيان سواء كان كلاس او دالة ، انها قابلة للتطور والتغيير الدائم بشرط عدم التعديل علي الكود المصدري!<br><img src="/images/posts/solid/ocp.jpg" alt><br>لناخذ نفس المثال السابق مع تعديلات بسيطة لنستوضح الامور اكثر.</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Employee</span>
+<span class="token punctuation">{</span>
+
+<span class="token keyword">public</span> Money <span class="token function">calculatePay</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>باعتبار ان لدي كلاس تعبر عن الموظف ، وهناك انواع مختلفة من الموظفين في الشركة.</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">SeniorEmployee</span> <span class="token keyword">extends</span> <span class="token class-name">Employee</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> Money <span class="token function">calculatePay</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">// some changes</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">JuniorEmployee</span> <span class="token keyword">extends</span> <span class="token class-name">Employee</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> Money <span class="token function">calculatePay</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">// some changes</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">CalculatePay</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CalculatePay</span> <span class="token punctuation">{</span>
+      <span class="token keyword">public</span> Money <span class="token function">calculate</span><span class="token punctuation">(</span>Employee<span class="token punctuation">[</span><span class="token punctuation">]</span> employees<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> employees<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              Employee employee <span class="token operator">=</span> employees<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>employee <span class="token keyword">instanceof</span> <span class="token class-name">JuniorEmployee</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+              <span class="token punctuation">}</span>
+               <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>employee <span class="token keyword">instanceof</span> <span class="token class-name">SeniorEmployee</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+              <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+          <span class="token keyword">return</span> <span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>الان هذه الكلاس تقوم بحساب المرتب للموظف علي حسب نوعية الموظف في الشركة.<br>لنتخيل الان اننا نريد اضافة نوع جديد من الموظفين او العاملين بالشركة وليكن Intern ، الامر واضح ، سيكون علينا تعديل الكلاس - CalculatePay - كما يلي :</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">InternEmployee</span> <span class="token keyword">extends</span> <span class="token class-name">Employee</span>
+    <span class="token punctuation">{</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> Money <span class="token function">calculatePay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">CalculatePay</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CalculatePay</span> <span class="token punctuation">{</span>
+      <span class="token keyword">public</span> Money <span class="token function">calculate</span><span class="token punctuation">(</span>Employee<span class="token punctuation">[</span><span class="token punctuation">]</span> employees<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> employees<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              Employee employee <span class="token operator">=</span> employees<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>employee <span class="token keyword">instanceof</span> <span class="token class-name">JuniorEmployee</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// code ...</span>
+              <span class="token punctuation">}</span>
+               <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>employee <span class="token keyword">instanceof</span> <span class="token class-name">SeniorEmployee</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                  <span class="token comment" spellcheck="true">// code ...</span>
+              <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>employee <span class="token keyword">instanceof</span> <span class="token class-name">InternEmployee</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                  <span class="token comment" spellcheck="true">// code ...</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+          <span class="token keyword">return</span> <span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>وهكذا مع كل اضافة جديدة سنضطر الي تعديل الكود مرة اخري ، ولكن اليس كل شئ يعمل ؟! لماذا اذن نهتم ؟ لماذا يعتبر هذا الاسلوب خاطئ ؟<br> تخيل ان هناك كلاس اخري تعتمد علي هذه الكلاس ، وبالتالي عند التعديل عليها لابد وان تعدل ايضا علي الاخري لكي تتوافق مع هذا التعديل ، تخيل الان ان بدلا من واحدة اصبحت اثنتين او ثلاث ! لذلك يعتبر هذا التصميم خاطئ ، تذكر اننا دائما نسعي لكود اكثر قابلية للقراءة والتعديل في المستقبل!</p>
+<h4 id="الطريق-الصحيح"><a href="#الطريق-الصحيح" class="headerlink" title="الطريق الصحيح"></a>الطريق الصحيح</h4><p>لندع الامور الان تتوافق مع مبدأ OCP ولنري الفرق !</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Employee</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">abstract</span> Money <span class="token function">CalculatePay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">JuniorEmployee</span> <span class="token keyword">extends</span> <span class="token class-name">Employee</span>
+    <span class="token punctuation">{</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> Money <span class="token function">calculatePay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">SeniorEmployee</span> <span class="token keyword">extends</span> <span class="token class-name">Employee</span>
+    <span class="token punctuation">{</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> Money <span class="token function">calculatePay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">CalculatePay</span>
+    <span class="token punctuation">{</span>
+
+      <span class="token keyword">public</span> Money <span class="token function">calculate</span><span class="token punctuation">(</span>Employee<span class="token punctuation">[</span><span class="token punctuation">]</span> employees<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Employee employee <span class="token operator">:</span> employees <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          employee<span class="token punctuation">.</span><span class="token function">calculatePay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>الان اذا اردنا ان نقوم باضافة نوع جديد من العاملين بالشركة ، كل ما علينا هو وضع الاضافة فقط بدون اي تعديلات علي كلاس CalculatePay</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">InternEmployee</span> <span class="token keyword">extends</span> <span class="token class-name">Employee</span>
+    <span class="token punctuation">{</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> Money <span class="token function">calculatePay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Liskov-Substitution-Principle"><a href="#Liskov-Substitution-Principle" class="headerlink" title="Liskov Substitution Principle"></a>Liskov Substitution Principle</h3><p><code>1. مفهوم الInheritance الاول</code></p>
+<ol start="2">
+<li>المشكلة وعلاقتها بالفتح والاغلاق</li>
+<li>شرح المفهوم وعنوانه</li>
+<li>لماذا يعتبر هذا مشكلة</li>
+<li>الحلول والفائدة</li>
+</ol>
+<p>احد المبادئ الاساسية للـ OOP المعروفة بالبرمجة الكائنية هو مبدأ الوراثة - Inheritance - حيث يوجد كلاس او كائن يمكنه الوراثة من كائن اخر ، والوراثة هنا يقصد بها استخدام الدوال والمتغيرات في الكلاس الاب او “الاصلية” مع اضافة متغيرات جديدة للكلاس الابن او “الفرعية” وتسمي Subclass<br><img src="/images/posts/solid/inheritance.jpg" alt="مفهوم الوراثة"><br>قبل اي شئ دعنا ناخذ مثال بسيط يعبر عن المشكلة في الاستخدام الخاطئ لمفهوم الوراثة ، لنفترض المثال التالي:</p>
+<pre class="line-numbers language-java"><code class="language-java">
+<span class="token keyword">class</span> <span class="token class-name">Vehicle</span>
+    <span class="token punctuation">{</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getSpeed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">
+<span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token keyword">extends</span> <span class="token class-name">Vehicle</span>
+    <span class="token punctuation">{</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getSpeed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">
+<span class="token keyword">class</span> <span class="token class-name">Bike</span> <span class="token keyword">extends</span> <span class="token class-name">Vehicle</span>
+    <span class="token punctuation">{</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// المشكلة</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getSpeed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>في هذا المثال ، يوجد مشكلة هنا ، وهي اننا قمنا بوراثة دالة لايمكن ان نستخدمها في الكلاس المسمي Bike حيث ان الدراجة لا يمكن ان تحتوي علي محركات!<br>إذن هذا المبدا يحل مشكلة الاستخدام الخاطئ لمفهوم الوراثة. حيث ينص علي<br><code>اذا كان هناك كلاس S ترث من كلاس T, اذن يمكن تعويض اي كائن -object- من النوع T باخر من النوع S بدون تعديل اطلاقا علي محتوي الكلاس!</code></p>
+<blockquote>
+<p>In a computer program, if S is a subtype of T, then objects of type T may be replaced with objects of type S i.e., objects of type S may substitute objects of type T without altering any of the desirable properties of that program (correctness, task performed, etc.)</p>
+</blockquote>
+<p>لناخذ الامور خطوة بخطوة ، يسمي هذا المبدا Liskov وهو علي اسم عالمة الكمبيوتر Barbara Liskov و Substitution وهي تعني التعويض او الاستبدال !لناخذ مثال! </p>
+<h3 id="المصادر"><a href="#المصادر" class="headerlink" title="المصادر"></a>المصادر</h3><p><a href="https://en.wikipedia.org/wiki/SOLID" target="_blank" rel="noopener">SOLID wikipedia</a><br><a href="https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html" target="_blank" rel="noopener">Clean coder: SRP</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+
+
+
+            <hr>
+            <div class="rns"></div>
+              <script type="text/javascript">
+                (function() {
+                  window.rnsData = {
+                    apiKey: '2hs8cboj42z7p4o9'
+                  };
+                  var s = document.createElement('script');
+                  s.src = 'https://cdn.reactandshare.com/plugin/rns.js';
+                  document.body.appendChild(s);
+                }());
+              </script>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;يمكنك انتهاك كل الحقوق مع ذكر المصدر:
+                    </span>
+                    <a href="http://Mshalan.GitHub.io" class="b-link-green">Mohammed Shalan</a>
+                    <i dir="ltr" class="fa fa-angle-left fa-lg fa-fw text-color" style="direction:ltr"></i>
+
+                    <a dir="ltr" href="/2019/06/21/SOLID-Principles-OOD-in-Arabic/" class="b-link-green">S.O.L.I.D أهم المبادئ البرمجية التي لا يمكن الاستغناء عنها</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;التدوينة السابقة</div>
+            <div class="card">
+                <a href="/2020/02/08/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="مرحبا بالعالم">
+                        
+                        <span class="card-title">مرحبا بالعالم</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">The man who dares, the manwho decides what he wants to achieveand works till his dreams all cometrue,the man who will al</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>٢٠٢٠-٠٢-٠٨
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            محمد شعلان
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/starting/" target="_blank">
+                        <span class="chip bg-color">starting</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                التدوينة التالية&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/04/01/HowToDealWithROSfilesystem/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="التعامل مع نظام الملفات -Filesystem- في ROS">
+                        
+                        <span class="card-title">التعامل مع نظام الملفات -Filesystem- في ROS</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">عند سماع كلمة File system فان اول شئ نفكر به هو OS لارتباط نظام الملفات دائما بانظمة التشغيل لكننا نعلم جيدا ان ROS ليس </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>٢٠١٩-٠٤-٠١
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Robotics/" class="post-category" target="_blank">
+                                    Robotics
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ROS/" target="_blank">
+                        <span class="chip bg-color">ROS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;محتوي المقال</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:MohammedShalan9@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;بحث</span>
+            <input type="search" id="searchInput" name="s" placeholder="تبحث عن ... ؟" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
